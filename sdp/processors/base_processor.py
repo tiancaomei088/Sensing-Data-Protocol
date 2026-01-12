@@ -5,11 +5,11 @@ import numpy as np
 from typing import List
 from functools import partial
 from concurrent.futures import ProcessPoolExecutor
-from algorithms import phase_calibration, wavelet_denoise_csi
-from structure.CSIData import CSIData
+from sdp.algorithms import phase_calibration, wavelet_denoise_csi
+from sdp.structure import CSIData
 
 
-class Processor():
+class BaseProcessor():
     def process(self, data_list: List[CSIData], **kwargs):
         dataset = kwargs.get('dataset', '')
         all_data = []

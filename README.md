@@ -152,7 +152,7 @@ Store various functions for implementing different signal processing algorithms.
 ### Install Dependencies
 Create a venv for dependencies, then run:
 ```bash
-pip install -r requirements.txt
+
 ```
 
 ### Download Data
@@ -163,7 +163,7 @@ Considering that there are countless lines of print when processing thousands of
 
 ```bash
 # Check the params first, especially for file path :)
-nohup python preprocess.py >> output.log 2>&1 &
+nohup python core.py >> output.log 2>&1 &
 ```
 
 ### Train and Eval
@@ -171,7 +171,6 @@ Now that you get `processed_data.npz`, run:
 
 ```bash
 # Also, check the params :)
-python main.py
 ```
 
 ## 📚 Guide for extension

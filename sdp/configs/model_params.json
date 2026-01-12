@@ -1,0 +1,30 @@
+{
+  "widar": {
+    "batch": 32,
+    "lr": 3e-4,
+    "wd": 1e-3,
+    "num_epochs": 3,
+    "padding_length": 1500
+  },
+  "gait": {
+    "batch": 32,
+    "lr": 3e-4,
+    "wd": 1e-3,
+    "num_epochs": 3,
+    "padding_length": 1500
+  },
+  "xrf55": {
+    "batch": 32,
+    "lr": 3e-4,
+    "wd": 1e-3,
+    "num_epochs": 3,
+    "padding_length": 1000
+  },
+  "elderAL": {
+    "batch": 32,
+    "lr": 3e-4,
+    "wd": 1e-3,
+    "num_epochs": 3,
+    "padding_length": 80
+  }
+}

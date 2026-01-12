@@ -1,12 +1,10 @@
 import torch.nn as nn
 
 class CSIModel(nn.Module):
-    def __init__(self, task_type='classification', num_classes=10, output_dim=1,
-                base_channels=32, latent_dim=128):
+    def __init__(self, num_classes=10, base_channels=32, latent_dim=128):
         super().__init__()
-        self.task_type = task_type
 
-        # Spatial Encoder: cope with dimention F and A
+        # Spatial Encoder: cope with dimension F and A
         # input shape (B*T, 1, F, A)
         self.spatial_encoder = nn.Sequential(
             nn.Conv2d(1, base_channels, 3, padding=1),

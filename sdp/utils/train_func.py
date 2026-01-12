@@ -1,10 +1,9 @@
-import os
 import time
 import torch
 
 
 def train_model(model, criterion, optimizer, scheduler, train_loader, val_loader, 
-                num_epochs, device, checkpoint_path, use_checkpoint=False):
+                num_epochs, device, checkpoint_path):
     """
     param:
         model (nn.Module): model to training process.
@@ -15,8 +14,7 @@ def train_model(model, criterion, optimizer, scheduler, train_loader, val_loader
         val_loader: Pytorch dataLoader which return data and label
         num_epochs (int): total epoches of training process
         device (str): cuda or cpu
-        checkpoint_path (str): path to save best model。
-        use_checkpoint (bool): var for resuming training process from checkpoint 
+        checkpoint_path (str): path to save best model
 
     return:
         history: dict contains training and evaluation record
@@ -25,28 +23,11 @@ def train_model(model, criterion, optimizer, scheduler, train_loader, val_loader
     history = {
         'train_loss': [], 'train_acc': [],
         'val_loss': [], 'val_acc': [],
-        'epoch_time': [], 'lr': []
+        'epoch': [], 'lr': []
     }
 
     best_val_acc = 0.0
     start_epoch = 0
-
-    if use_checkpoint and os.path.isfile(checkpoint_path):
-        print(f"resuming training from checkpoint: {checkpoint_path}")
-        checkpoint = torch.load(checkpoint_path, map_location=device)
-        
-        model.load_state_dict(checkpoint['model_state_dict'])
-        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-        if scheduler and 'scheduler_state_dict' in checkpoint:
-            scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
-        
-        start_epoch = checkpoint['epoch'] + 1
-        best_val_acc = checkpoint.get('best_val_acc', 0.0)
-        
-        if 'history' in checkpoint:
-            history = checkpoint['history']
-
-        print(f"Model loaded. Begin training from epoch {start_epoch}, currently best acc: {best_val_acc:.2f}%")
 
     for epoch in range(start_epoch, num_epochs):
         epoch_start_time = time.time()
@@ -117,7 +98,7 @@ def train_model(model, criterion, optimizer, scheduler, train_loader, val_loader
         history['train_acc'].append(epoch_train_acc)
         history['val_loss'].append(epoch_val_loss)
         history['val_acc'].append(epoch_val_acc)
-        history['epoch_time'].append(epoch_duration)
+        history['epoch'].append(epoch_duration)
         history['lr'].append(current_lr)
         
         if epoch_val_acc > best_val_acc:
@@ -133,5 +114,4 @@ def train_model(model, criterion, optimizer, scheduler, train_loader, val_loader
                 'history': history,
             }, checkpoint_path)
             
-    print("training complete")
     return history
