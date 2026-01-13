@@ -183,7 +183,7 @@ After downloading, please organize **elderAL** datasets in the structure below f
 This project supports both functional call and command-line call in the shell. The calling methods are as follows respectively:
 
 ---
- - For `input_path`: please use `data/[widar, gait, xrf55, elderAL]`
+ - For `input_path`: `/data/[widar, gait, xrf55, elderAL]` are recommended
  - For `dataset_name`: `widar`, `gait`, `xrf55`, `elderAL` are available
 ---
 
