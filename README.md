@@ -5,9 +5,9 @@
 )](https://github.com/yuanhao-cui/Sensing-Data-Protocol/blob/main/LICENSE)
 ![Welcome to Ask](https://img.shields.io/badge/Welcome_to-Ask-72B063)
 
-# SDP: Sensing Data-Protocol for Scalable Wireless Sensing
+# SDP: Sensing Data Protocol for Scalable Wireless Sensing
 
-**SDP (Sensing Data-Protocol)** is a protocol-level abstraction framework and unified benchmark for scalable wireless sensing and perception based on wireless signals such as Channel State Information(CSI).
+**SDP (Sensing Data Protocol)** is a protocol-level abstraction framework and unified benchmark for scalable wireless sensing and perception based on wireless signals such as Channel State Information(CSI).
 The protocol is designed to decouple learning performance from hardware-specific artifacts, enabling **fair, reproducible, and scalable evaluation** of deep learning models for wireless sensing tasks.
 
 SDP enforces **deterministic physical-layer sanitization, canonical tensor construction, and standardized training and evaluation procedures**, making it particularly suitable for wireless sensing research, activity recognition, device-free sensing, and cross-dataset benchmarking.
