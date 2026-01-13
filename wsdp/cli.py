@@ -1,6 +1,6 @@
 import argparse
 
-from core import pipeline
+from .core import pipeline
 
 
 def _run_pipeline(args):

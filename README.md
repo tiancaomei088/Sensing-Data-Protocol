@@ -1,5 +1,5 @@
-[![SDP](https://img.shields.io/badge/Sensing_Dataset-Platform-356596)](https://sdp8.org/)
-![TOML](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/yuanhao-cui/Sensing-Data-Protocol/refs/heads/main/pyproject.toml&query=%24.project.name&logo=pypi&label=pip
+[![SDP](https://img.shields.io/badge/SDP_Webside-Click_here-356596)](https://sdp8.org/)
+[![TOML](https://img.shields.io/badge/dynamic/toml?url=https://raw.githubusercontent.com/yuanhao-cui/Sensing-Data-Protocol/refs/heads/main/pyproject.toml&query=%24.project.name&logo=pypi&label=pip)](https://pypi.org/project/wsdp/
 )
 [![GitHub](https://img.shields.io/github/license/yuanhao-cui/Sensing-Data-Protocol?color=green
 )](https://github.com/yuanhao-cui/Sensing-Data-Protocol/blob/main/LICENSE)
@@ -159,7 +159,7 @@ Create a venv for dependencies, then run:
 ```
 
 ### Download Data
-Please download needed datasets from [Our SDP Website](http://sdp8.org/) or:
+Please download needed datasets from [Our SDP Website](http://sdp8.org/) or via command:
 ```bash
   wsdp xxxx [dataset_name] [dir]  # TBD
 ```
@@ -168,6 +168,9 @@ After downloading, please organize **elderAL** datasets in the structure below f
 ├── data
     ├── elderAL
     │   ├── action0_static_new
+    │   │   ├── user0_position1_activity0
+    │   │   ├── ...
+    │   │
     │   ├── action1_walk_new
     │   ├── ...
     │

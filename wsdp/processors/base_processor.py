@@ -87,8 +87,7 @@ def parse_file_info_from_filename(f_name, dataset):
             print(f"[Warning] Skipping file {f_name}: Invalid format for xrf55.")
 
     elif dataset == 'elderAL':
-        base = f_name.split('/')[4]
-        m = re.search(r"user(\d+)_position(\d+)_activity(\d+)", base)
+        m = re.search(r"user(\d+)_position(\d+)_activity(\d+)", f_name)
         if m:
             user_id = int(m.group(1))
             position_id = int(m.group(2))
