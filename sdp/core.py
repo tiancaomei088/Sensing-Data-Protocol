@@ -1,6 +1,5 @@
 import os
 import random
-import argparse
 import torch
 import pandas as pd
 import numpy as np
@@ -202,15 +201,3 @@ def pipeline(input_path: str, output_folder: str, dataset: str):
     print("=" * 72)
 
     print(f"\n All pipeline complete")
-
-
-def pipeline_cli():
-    parser = argparse.ArgumentParser(description="sdp CLI")
-
-    parser.add_argument("input_path", type=str, help="input data path")
-    parser.add_argument("output_folder", type=str, help="output path")
-    parser.add_argument("dataset", type=str, help="dataset name")
-
-    args = parser.parse_args()
-
-    pipeline(input_path=args.input_path, output_folder=args.output_folder, dataset=args.dataset)
