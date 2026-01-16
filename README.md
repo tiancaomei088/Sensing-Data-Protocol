@@ -155,15 +155,15 @@ Store various functions for implementing different signal processing algorithms.
 ### Install Dependencies
 Create a venv for dependencies, then run:
 ```bash
-  pip install wsdp
+pip install wsdp
 ```
 
 ### Download Data
 Please download needed datasets from [Our SDP Website](http://sdp8.org/) or via command:
 ```bash
-  wsdp xxxx [dataset_name] [dir]  # TBD
+wsdp xxxx [dataset_name] [dir]  # TBD
 ```
-After downloading, please organize **elderAL** datasets in the structure below for extracting labels:
+After downloading, in the folder of your project, please organize **elderAL** datasets in the structure below for extracting labels:
 ```
 ├── data
     ├── elderAL
@@ -188,18 +188,23 @@ This project supports both functional call and command-line call in the shell. T
 ---
 
 **function call:**
+
+Create a script, say script.py, then copy the code below and paste into the script:
 ```pycon
 from wsdp import pipeline
 
 pipeline(input_path, output_folder, dataset_name)
 ```
 
-Considering that training process will generate numerous lines about info like acc and loss, so in function-call, it is recommended to run in this way:
+Considering that training process will generate numerous lines about information like acc and loss, in function-call, it is recommended to run via the command below:
 ```bash
-  nohup python script.py >> output.log 2>&1 &
+nohup python script.py >> output.log 2>&1 &
 ```
 
 **command:**
+
+no need to create scripts, just run in command:
+
 ```bash
-  wsdp run [input_path] [output_folder] [dataset_name]
+wsdp run [input_path] [output_folder] [dataset_name]
 ```
